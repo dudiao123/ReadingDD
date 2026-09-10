@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="import_check_selected">Check selected sources</string>
+    <string name="import_check_stop">Stop checking</string>
+    <string name="import_select_passed">Select passed sources only</string>
+    <string name="import_check_report">Check results</string>
+    <string name="import_check_progress">Checked %1$d / %2$d · Passed %3$d</string>
+    <string name="import_check_passed">Passed</string>
+    <string name="import_check_failed">Not passed</string>
+    <string name="import_check_select_first">Select sources first</string>
+    <string name="import_check_hint">Book name (failed sources and sources requiring login or verification will be removed)</string>
+</resources>

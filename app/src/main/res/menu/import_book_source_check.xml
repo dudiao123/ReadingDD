@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_check_import_sources"
+        android:title="@string/import_check_selected"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_select_passed_sources"
+        android:title="@string/import_select_passed"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_import_check_report"
+        android:title="@string/import_check_report"
+        app:showAsAction="never" />
+</menu>

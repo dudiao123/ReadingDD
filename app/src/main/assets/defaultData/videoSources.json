@@ -1,0 +1,79 @@
+[
+  {
+    "bookSourceComment": "作者：wwwcloger",
+    "bookSourceGroup": "动漫",
+    "bookSourceName": "咕咕番",
+    "bookSourceType": 4,
+    "bookSourceUrl": "https://www.gugu3.com/",
+    "customOrder": 89,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": 1779525058152,
+    "respondTime": 14122,
+    "ruleBookInfo": {
+      "intro": "{{book.name + \"  简介:\"}}\n{{//div[@id=\"height_limit\"]/text()##。(?![\"'“”‘’《》〈〉［］｛｝【】〖〗〔〕『』「」。])##。\n}}"
+    },
+    "ruleContent": {
+      "content": "@js:\nconst match = String(result).match(/\"url\":\"([a-z0-9-]+)\"/);\nif (!match) throw \"未找到视频标识\";\nconst headers = {\"Content-Type\":\"application/x-www-form-urlencoded; charset=UTF-8\",\"X-Requested-With\":\"XMLHttpRequest\",\"User-Agent\":\"Mozilla/5.0 (Linux; Android 13; Mobile) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36\",\"Referer\":\"https://player.gugu3.com/\"};\nconst body = \"url=\" + match[1] + \"&time=\" + Math.floor(Date.now()/1000) + \"&key=&vkey=7fd97854c62c13bd\";\nconst response = java.post(\"https://player.gugu3.com/admin/mizhi_json.php\", body, headers);\nconst data = JSON.parse(response.body());\nif (!data.url) throw \"视频接口未返回地址\";\ndata.url + \",\" + JSON.stringify({headers:{\"Referer\":\"https://player.gugu3.com/\",\"User-Agent\":headers[\"User-Agent\"]}});"
+    },
+    "ruleSearch": {
+      "bookList": "//div[@class=\"row-right\"]/div",
+      "bookUrl": "//a[@class=\"public-list-exp\"]/@href",
+      "checkKeyWord": "终究、与你相恋。 第二季",
+      "coverUrl": "//div[@class=\"cover\"]/@style\n@js: result.match(/url\\([\"']?([^\"')]+)[\"']?\\)/)[1];",
+      "intro": "//span[@class=\"cor5 thumb-blurb hide2\"]/text()",
+      "kind": "//div[@class=\"thumb-else cor5 hide\"]/span/a/text()",
+      "lastChapter": "//span[@class=\"public-list-prb hide ft2\"]/text()",
+      "name": "//div[@class=\"thumb-txt cor4 hide\"]/text()"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nconst html = org.jsoup.Jsoup.parse(java.ajax(baseUrl));\nlet items = html.select(\"ul.anthology-list-play.size\");\nlet plist = [];\n\nfor (let n = 0; n < items.size(); n++) {\n    let item = items.get(n).select(\"li > a\");\n    for (let i = 0; i < item.size(); i++) {\n        let a = item.get(i);\n        let title = a.text();\n        let href = a.attr(\"href\");\n        let source  = \"播放路线  \" + (n + 1);\n        plist.push({\n            title: title,\n            url: href,\n            source: source\n        });\n    }\n}\n\nplist;",
+      "chapterName": "title",
+      "chapterUrl": "url",
+      "updateTime": "source"
+    },
+    "searchUrl": "index.php/vod/search/page/{{page}}/wd/{{key}}.html",
+    "weight": 0
+  },
+  {
+    "bookSourceGroup": "动漫",
+    "bookSourceName": "红牛资源",
+    "bookSourceType": 4,
+    "bookSourceUrl": "https://hongniuziyuan.com",
+    "customOrder": 145,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "[\n{\"title\":\"首页\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1}},{\"title\":\"最近更新\",\"url\":\"https://hongniuziyuan.com/index.php/index/index/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"电影\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1}},{\"title\":\"动作片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/5/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"喜剧片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/6/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"爱情片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/7/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"科幻片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/8/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"恐怖片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/9/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"剧情片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/10/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"战争片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/11/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"动作电影\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/20/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"连续剧\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1}},{\"title\":\"国产剧\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/12/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"港澳剧\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/13/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"日剧\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/14/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"欧美剧\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/15/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"台湾剧\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/16/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"泰剧\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/17/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"韩剧\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/18/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"——\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1}},{\"title\":\"综艺\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/3/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"——\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1}},{\"title\":\"动漫\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/4/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"——\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1}},{\"title\":\"纪录片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/19/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1, \"layout_flexBasisPercent\":1}},{\"title\":\"——\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1}},{\"title\":\"伦理片\",\"url\":\"https://hongniuziyuan.com/index.php/vod/type/id/21/page/{{page}}.html?ac=detail\",\"style\":{\"layout_flexGrow\":1}}\n]",
+    "lastUpdateTime": 1785693796320,
+    "respondTime": 7797,
+    "ruleBookInfo": {
+      "author": "@css:.vodinfobox>ul>li:eq(1)>strong>span@text",
+      "coverUrl": "@css:.vodImg>strong>img@src",
+      "intro": "@css:.vodplayinfo>strong@textNodes"
+    },
+    "ruleContent": {
+      "content": "<js>\nvar url=\"\";\nif(/.*\\.m3u8.*/.test(baseUrl)){url=baseUrl}\nelse{\njm=java.htmlFormat(result).match(/.*(\\{.*\\}).*/)[1];\nurl=baseUrl.match(/(.*)\\/share.*/)[1]+jm.match(/.*url\":\"(.*)\"\\}.*/)[1];\n}\nurl\n</js>"
+    },
+    "ruleExplore": {
+      "bookList": "class.xing_vb@ul!0",
+      "bookUrl": "@css:.xing_vb4>a@href",
+      "kind": "@css:.xing_vb5@text",
+      "name": "@css:.xing_vb4>a@textNodes"
+    },
+    "ruleSearch": {
+      "bookList": "@css:.xing_vb>ul",
+      "bookUrl": "@css:.xing_vb4>a@href",
+      "kind": "@css:.xing_vb5@text",
+      "name": "@css:.xing_vb4>a@textNodes"
+    },
+    "ruleToc": {
+      "chapterList": "@css:.vodplayinfo>div>div>ul>li",
+      "chapterName": "@css:a@text##(.+)\\$(.+)##$1",
+      "chapterUrl": "@css:a@text##(.+)\\$(.+)##$2"
+    },
+    "searchUrl": "https://hongniuziyuan.com/index.php/vod/search.html?wd={{key}}&submit=search",
+    "weight": 59
+  }
+]

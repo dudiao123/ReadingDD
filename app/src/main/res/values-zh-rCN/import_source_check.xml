@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="import_check_selected">检测所选书源</string>
+    <string name="import_check_stop">停止检测</string>
+    <string name="import_select_passed">只选检测通过的书源</string>
+    <string name="import_check_report">查看检测结果</string>
+    <string name="import_check_progress">已检测 %1$d / %2$d · 通过 %3$d</string>
+    <string name="import_check_passed">通过</string>
+    <string name="import_check_failed">未通过</string>
+    <string name="import_check_select_first">请先勾选书源</string>
+    <string name="import_check_hint">书名（自动移除未通过、需登录或验证的书源）</string>
+</resources>
