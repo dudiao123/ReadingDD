@@ -48,9 +48,8 @@
 
 ## 💬 交流
 
-* **Telegram 群组：** [Legado with MD3](https://t.me/materado)
-* **版本发布：**
-  最新版本会自动发布至群组，也可在 [GitHub Releases](https://github.com/HapeLee/legado-with-MD3/releases)
+* **Telegram 群组：** [Legado with MD3 社区](https://t.me/materado)
+* **版本发布：** 请在 [阅读DD Releases](https://github.com/dudiao123/ReadingDD/releases) 下载最新版本。
   下载。
 
 ---
